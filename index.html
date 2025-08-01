@@ -6,9 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git & GitHub Crash Course</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+      }
+      p {
+        color: #666;
+        font-size: 1.1em;
+        text-align: center;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-top: 20px;
+      }
+      .command {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-left: 3px solid #333;
+        margin: 10px 0;
+        font-family: monospace;
+      }
+      h2 {
+        color: #444;
+        margin-top: 30px;
+      }
+    </style>
   </head>
   <body>
     <h1>Git & GitHub Crash Course</h1>
     <p>Because the basics are important!</p>
+    
+    <div class="container">
+      <h2>Basic Git Commands</h2>
+      <div class="command">git init</div>
+      <p>Initializes a new Git repository</p>
+
+      <div class="command">git add &lt;file&gt;</div>
+      <p>Stages changes for commit</p>
+
+      <div class="command">git commit -m "message"</div>
+      <p>Commits staged changes with a descriptive message</p>
+
+      <h2>Common Git Operations</h2>
+      <div class="command">git status</div>
+      <p>Shows the status of your working directory</p>
+
+      <div class="command">git log</div>
+      <p>Displays commit history</p>
+
+      <div class="command">git branch</div>
+      <p>Lists all local branches</p>
+      </div>
+
+      <h2>Branch Operations</h2>
+      <div class="command">git branch</div>
+      <p>Lists all local branches</p>
+
+      <div class="command">git checkout -b &lt;branch-name&gt;</div>
+      <p>Creates and switches to a new branch</p>
+
+      <div class="command">git merge &lt;branch-name&gt;</div>
+      <p>Merges specified branch into current branch</p>
+
+      <h2>Remote Operations</h2>
+      <div class="command">git remote add origin &lt;repo-url&gt;</div>
+      <p>Connects local repository to remote repository</p>
+
+      <div class="command">git push -u origin main</div>
+      <p>Pushes commits to remote repository</p>
+
+      <div class="command">git pull origin main</div>
+      <p>Fetches and merges changes from remote repository</p>
+    </div>
   </body>
 </html>
