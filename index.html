@@ -159,7 +159,6 @@
         git stash -a
       </div>
     </div>
-
     <div class="command-group">
       <h4>View & Apply Stashes</h4>
       <div class="code-example">
@@ -175,9 +174,9 @@
         # Apply but keep stash
         git stash apply
       </div>
-    </div>
+    </div>  
 
-    <div class="command-group">
+     <div class="command-group">
       <h4>Common Use Cases</h4>
       <div class="example-box">
         <p>Switch branches with uncommitted work:</p>
@@ -188,16 +187,82 @@
           git checkout original-branch
           git stash pop
         </div>
-      </div>
-    </div>
 
-    <div class="notes">
+      </div>
+      </div>
+
+      <div class="notes">
       <h4>Important Notes:</h4>
       <ul>
         <li>✅ Use descriptive messages with stash save</li>
         <li>✅ Check contents before applying with stash show</li>
         <li>⚠️ Stashes are stored locally only</li>
         <li>⚠️ Stash clear removes all stashes permanently</li>
+      </ul>
+      </div>  
+  </div>
+
+
+
+<div class="container">
+  <h2>Working with Remote Repositories</h2>
+  
+  <div class="concept-box remote">
+    <h3>Basic Remote Commands</h3>
+    
+    <div class="command-group">
+      <h4>View Remotes</h4>
+      <div class="code-example">
+        # List remotes
+        git remote
+
+        # Show remote details
+        git remote -v
+        
+        # Show detailed info
+        git remote show origin
+      </div>
+    </div>
+
+    <div class="command-group">
+      
+      <h4>Manage Remotes</h4>
+      <div class="code-example">
+        # Add new remote
+        git remote add origin https://github.com/username/repo.git
+
+        # Change remote URL
+        git remote set-url origin git@github.com:username/repo.git
+
+        # Rename remote
+        git remote rename origin upstream
+
+        # Remove remote
+        git remote remove upstream
+      </div>
+    </div>
+
+    <div class="command-group">
+      <h4>Common Operations</h4>
+      <div class="code-example">
+        # Download from remote
+        git fetch origin
+
+        # Fetch and merge changes
+        git pull origin main
+
+        # Push local changes
+        git push -u origin main
+      </div>
+    </div>
+
+    <div class="notes">
+      <h4>Important Notes:</h4>
+      <ul>
+        <li>✅ HTTPS or SSH URLs can be used</li>
+        <li>✅ Origin is the conventional name for primary remote</li>
+        <li>⚠️ Always verify remote URL before pushing</li>
+        <li>⚠️ Set up authentication before pushing</li>
       </ul>
     </div>
   </div>

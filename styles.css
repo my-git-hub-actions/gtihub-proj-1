@@ -111,4 +111,7 @@ p {
   padding: 15px;
   border-radius: 6px;
   margin: 10px 0;
+} 
+.remote {
+  border-left: 4px solid #0366d6;
 }
