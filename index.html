@@ -137,5 +137,70 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <h2>Git Stash Operations</h2>
+  
+  <div class="concept-box stash">
+    <h3>Basic Stash Commands</h3>
+    
+    <div class="command-group">
+      <h4>Save Changes to Stash</h4>
+      <div class="code-example">
+        # Quick stash
+        git stash
+        
+        # Stash with message
+        git stash save "work in progress"
+        
+        # Include untracked files
+        git stash -u
+        
+        # Include all files
+        git stash -a
+      </div>
+    </div>
+
+    <div class="command-group">
+      <h4>View & Apply Stashes</h4>
+      <div class="code-example">
+        # List all stashes
+        git stash list
+        
+        # Show stash contents
+        git stash show
+        
+        # Apply and remove latest stash
+        git stash pop
+        
+        # Apply but keep stash
+        git stash apply
+      </div>
+    </div>
+
+    <div class="command-group">
+      <h4>Common Use Cases</h4>
+      <div class="example-box">
+        <p>Switch branches with uncommitted work:</p>
+        <div class="code-example">
+          git stash save "WIP: feature"
+          git checkout other-branch
+          # do work
+          git checkout original-branch
+          git stash pop
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <h4>Important Notes:</h4>
+      <ul>
+        <li>✅ Use descriptive messages with stash save</li>
+        <li>✅ Check contents before applying with stash show</li>
+        <li>⚠️ Stashes are stored locally only</li>
+        <li>⚠️ Stash clear removes all stashes permanently</li>
+      </ul>
+    </div>
+  </div>
+</div>
   </body>
 </html>

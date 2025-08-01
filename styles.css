@@ -85,3 +85,30 @@ p {
 .reset {
   border-left: 4px solid #dc3545;
 }
+
+.stash {
+  border-left: 4px solid #6f42c1;
+}
+
+.command-group {
+  margin-bottom: 20px;
+}
+
+.command-group h4 {
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.notes {
+  background-color: #fff3cd;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.example-box {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+}
