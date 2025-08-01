@@ -6,45 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git & GitHub Crash Course</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f5f5f5;
-      }
-      h1 {
-        color: #333;
-        text-align: center;
-        border-bottom: 2px solid #333;
-        padding-bottom: 10px;
-      }
-      p {
-        color: #666;
-        font-size: 1.1em;
-        text-align: center;
-      }
-      .container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-top: 20px;
-      }
-      .command {
-        background-color: #f0f0f0;
-        padding: 10px;
-        border-left: 3px solid #333;
-        margin: 10px 0;
-        font-family: monospace;
-      }
-      h2 {
-        color: #444;
-        margin-top: 30px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <h1>Git & GitHub Crash Course</h1>
@@ -92,5 +54,88 @@
       <div class="command">git pull origin main</div>
       <p>Fetches and merges changes from remote repository</p>
     </div>
+
+    <div class="reset-type">
+      <h3>Soft Reset</h3>
+      <div class="command">git reset --soft HEAD~1</div>
+      <ul>
+        <li>✅ Preserves modified files in staging area</li>
+        <li>✅ Allows recommitting with new message</li>
+        <li>✅ Safe operation - no data loss</li>
+      </ul>
+      <div class="code-example">
+        # Example: Combining last commit with new changes
+        git reset --soft HEAD~1
+        git add .
+        git commit -m "Better commit message"
+      </div>
+    </div>
+
+    <div class="reset-type">
+      <h3>Hard Reset</h3>
+      <div class="command">git reset --hard HEAD~1</div>
+      <ul>
+        <li>❌ Discards all changes permanently</li>
+        <li>❌ Resets working directory completely</li>
+        <li class="warning">⚠️ Cannot recover discarded changes</li>
+      </ul>
+      <div class="code-example">
+        # Example: Complete reset to previous commit
+        git reset --hard HEAD~1  # Use with caution!
+      </div>
+    </div>
+
+    <div class="container">
+  <div class="comparison-section">
+    <h2>Git Rebase vs Reset</h2>
+    
+    <div class="concept-box rebase">
+      <h3>Git Rebase</h3>
+      <p>Rewrites commit history by moving commits to a new base</p>
+      
+      <div class="code-example">
+        # Moving feature branch to latest main
+        git checkout feature
+        git rebase main
+
+        # Interactive rebase for last 3 commits
+        git rebase -i HEAD~3
+      </div>
+
+      <ul>
+        <li>✅ Creates cleaner, linear history</li>
+        <li>✅ Integrates changes from other branches</li>
+        <li>⚠️ Don't use on public/shared branches</li>
+        <li>Consider we have feature branch with multiple commits, when we want to merge them with
+          main branch, then we need to checkout to feature branch and run <code>git rebase main</code> to move feature branch commits onto latest main. Here while moving using rebase
+          we interactively merge the commits to single commit for cleaner commit history</li>  
+        </li>
+        <li>Here while rebasing we will get multiple options like pick - keep commit as is
+          , squash - combine with previous commit, 
+        reword - change commit message, 
+        drop - remove commit</li>
+      </ul>
+    </div>
+
+    <div class="concept-box reset">
+      <h3>Git Reset</h3>
+      <p>Moves branch pointer to different commit</p>
+      
+      <div class="code-example">
+        # Soft reset - preserve changes
+        git reset --soft HEAD~1
+
+        # Hard reset - discard changes
+        git reset --hard HEAD~1
+      </div>
+
+      <ul>
+        <li>✅ Quick way to undo local commits</li>
+        <li>✅ Can keep or discard changes</li>
+        <li>⚠️ Hard reset permanently loses changes</li>
+      </ul>
+    </div>
+  </div>
+</div>
   </body>
 </html>
