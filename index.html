@@ -267,5 +267,61 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <h2>Git Collaboration</h2>
+  
+  <div class="concept-box collaboration">
+    <h3>Working with Collaborators</h3>
+    
+    <div class="command-group">
+      <h4>Access Management</h4>
+      <div class="code-example">
+        # View repository collaborators (GitHub CLI)
+        gh repo view [repository] --collaborators
+
+        # Add collaborator (GitHub CLI)
+        gh repo add-collaborator [repository] [username]
+      </div>
+    </div>
+
+    <div class="command-group">
+      <h4>Collaboration Workflow</h4>
+      <div class="code-example">
+        # Get latest changes
+        git fetch origin
+        git pull origin main
+
+        # Create feature branch
+        git checkout -b feature-name
+
+        # Push branch to remote
+        git push -u origin feature-name
+      </div>
+    </div>
+
+    <div class="notes">
+      <h4>Best Practices:</h4>
+      <ul>
+        <li>✅ Always pull before starting new work</li>
+        <li>✅ Use feature branches for new changes</li>
+        <li>✅ Write clear commit messages</li>
+        <li>⚠️ Avoid working directly on main branch</li>
+        <li>⚠️ Resolve conflicts before merging</li>
+      </ul>
+    </div>
+
+    <div class="command-group">
+      <h4>Pull Requests</h4>
+      <div class="code-example">
+        # Create PR (GitHub CLI)
+        gh pr create --title "Feature title" --body "Description"
+
+        # Review PR
+        gh pr checkout [PR-number]
+        gh pr review [PR-number] --approve
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
